@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pic Alarm</string>
+
+    <string name="hello_world">Hello World!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_alarm_receiver">AlarmReceiver</string>
+</resources>
