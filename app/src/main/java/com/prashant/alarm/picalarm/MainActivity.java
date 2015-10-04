@@ -23,15 +23,15 @@ public class MainActivity extends ActionBarActivity {
         Calendar alarm = Calendar.getInstance();
         Calendar bday = Calendar.getInstance();
         // Alarm for changing wallpaper daily
-        alarm.set(Calendar.HOUR_OF_DAY,14);
-        alarm.set(Calendar.MINUTE,51);
+        alarm.set(Calendar.HOUR_OF_DAY,23);
+        alarm.set(Calendar.MINUTE,0);
         alarm.set(Calendar.SECOND,0);
         // Bday for changing wallpaper on her bday
-        bday.set(Calendar.DAY_OF_MONTH,4);
+        bday.set(Calendar.DAY_OF_MONTH,20);
         bday.set(Calendar.MONTH,9);
         bday.set(Calendar.YEAR,2015);
-        bday.set(Calendar.HOUR_OF_DAY,16);
-        bday.set(Calendar.MINUTE, 26);
+        bday.set(Calendar.HOUR_OF_DAY,23);
+        bday.set(Calendar.MINUTE, 59);
         // bday.set(Calendar.SECOND,5);
         currentTime = current.getTimeInMillis();
         alarmTime = alarm.getTimeInMillis();
