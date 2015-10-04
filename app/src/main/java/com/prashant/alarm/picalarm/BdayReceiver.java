@@ -20,10 +20,10 @@ public class BdayReceiver extends BroadcastReceiver {
         Toast.makeText(context, "Happy Birthday", Toast.LENGTH_LONG).show();
         WallpaperManager myWallpaperManager = WallpaperManager.getInstance(context);
         try {
-            myWallpaperManager.setResource(R.drawable.hbd2);
+            myWallpaperManager.setResource(R.drawable.brush);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //System.out.println("Receiver");
+        System.out.println("Birthday");
     }
 }

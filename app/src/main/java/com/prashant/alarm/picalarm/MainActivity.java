@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -23,25 +24,32 @@ public class MainActivity extends ActionBarActivity {
         Calendar bday = Calendar.getInstance();
         // Alarm for changing wallpaper daily
         alarm.set(Calendar.HOUR_OF_DAY,14);
-        alarm.set(Calendar.MINUTE,30);
+        alarm.set(Calendar.MINUTE,51);
         alarm.set(Calendar.SECOND,0);
         // Bday for changing wallpaper on her bday
-        bday.set(Calendar.DAY_OF_MONTH,04);
-        bday.set(Calendar.HOUR_OF_DAY,15);
-        bday.set(Calendar.MINUTE,00);
-        bday.set(Calendar.SECOND,58);
+        bday.set(Calendar.DAY_OF_MONTH,4);
+        bday.set(Calendar.MONTH,9);
+        bday.set(Calendar.YEAR,2015);
+        bday.set(Calendar.HOUR_OF_DAY,16);
+        bday.set(Calendar.MINUTE, 26);
+        // bday.set(Calendar.SECOND,5);
         currentTime = current.getTimeInMillis();
         alarmTime = alarm.getTimeInMillis();
         bdayTime = bday.getTimeInMillis();
 
         Intent tempAlarm = new Intent(MainActivity.this,AlarmReceiver.class);
-        alarmIntent = PendingIntent.getBroadcast(MainActivity.this,1234,tempAlarm,0);
+        alarmIntent = PendingIntent.getBroadcast(MainActivity.this,4228,tempAlarm,0);
 
         Intent tempAlarm2 = new Intent(MainActivity.this,BdayReceiver.class);
         bdayIntent = PendingIntent.getBroadcast(MainActivity.this,1234,tempAlarm2,0);
 
         AlarmManager daily = (AlarmManager)getSystemService(ALARM_SERVICE);
         AlarmManager onbday = (AlarmManager)getSystemService(ALARM_SERVICE);
+        System.out.println(current.getTime());
+        System.out.println(bday.getTime());
+
+        daily.set(AlarmManager.RTC, bdayTime, bdayIntent);
+
         if(alarmTime >= currentTime) // you can add buffer time too here to ignore some small differences in milliseconds
         {
             //set from today
@@ -62,11 +70,15 @@ public class MainActivity extends ActionBarActivity {
 
         }
         if(bdayTime>=currentTime){
-            onbday.set(AlarmManager.RTC_WAKEUP,alarmTime,bdayIntent);
+            onbday.set(AlarmManager.RTC,bdayTime,bdayIntent);
+            System.out.println("1");
+            Toast.makeText(this,"One",Toast.LENGTH_LONG).show();
         }else {
+            Toast.makeText(this,"Two",Toast.LENGTH_LONG).show();
+            System.out.println("1");
             bday.add(Calendar.DAY_OF_MONTH,1);
             bdayTime = bday.getTimeInMillis();
-            onbday.set(AlarmManager.RTC_WAKEUP,bdayTime,bdayIntent);
+            onbday.set(AlarmManager.RTC,bdayTime,bdayIntent);
         }
 
     }
