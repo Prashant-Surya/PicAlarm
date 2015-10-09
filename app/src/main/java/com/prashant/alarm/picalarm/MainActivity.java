@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity {
         Calendar bday = Calendar.getInstance();
         // Alarm for changing wallpaper daily
         alarm.set(Calendar.HOUR_OF_DAY,23);
-        alarm.set(Calendar.MINUTE,0);
+        alarm.set(Calendar.MINUTE,00);
         alarm.set(Calendar.SECOND,0);
         // Bday for changing wallpaper on her bday
         bday.set(Calendar.DAY_OF_MONTH,20);
@@ -72,9 +72,9 @@ public class MainActivity extends ActionBarActivity {
         if(bdayTime>=currentTime){
             onbday.set(AlarmManager.RTC,bdayTime,bdayIntent);
             System.out.println("1");
-            Toast.makeText(this,"One",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Hey",Toast.LENGTH_LONG).show();
         }else {
-            Toast.makeText(this,"Two",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Baby",Toast.LENGTH_LONG).show();
             System.out.println("1");
             bday.add(Calendar.DAY_OF_MONTH,1);
             bdayTime = bday.getTimeInMillis();

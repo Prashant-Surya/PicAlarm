@@ -17,7 +17,7 @@ public class BdayReceiver extends BroadcastReceiver {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
         //throw new UnsupportedOperationException("Not yet implemented");
-        Toast.makeText(context, "Happy Birthday", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "Happy Birthday Babe", Toast.LENGTH_LONG).show();
         WallpaperManager myWallpaperManager = WallpaperManager.getInstance(context);
         try {
             myWallpaperManager.setResource(R.drawable.hbd2);
